@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/web3@0.20.5/dist/web3.min.js"></script>
+        <!-- The generated javascript and app.js will be substituted in below -->
+        <!-- JAVASCRIPT -->
+
+        <!-- The app.css contents will be substituted in below -->
+        <!-- STYLE -->
+    </head>
+    <body>
+        <div id="welcome-container">
+            <h1>Welcome!</h1>
+            <h3>Please deploy (<img src="/static/img/rocket-ship.svg" color="#fff" height="14" width="14">) your contract to begin.</h3>
+        </div>
+        <div id="main-container" class="hidden">
+            <div id="create" class="tabcontent">
+                <h2>Create new tokens</h2>
+                <div class="input-group">
+                    <h3>Address</h3>
+                    <input type="text" id="create-address" placeholder="Enter address..." />
+                </div>
+                <div class="input-group">
+                    <h3>Amount</h3>
+                    <input type="number" id="create-amount" placeholder="Enter amount..." />
+                </div>
+                <div class="input-group">
+                    <button class="btn" id="button-create">Mint</button>
+                </div>
+            </div>
+            <div id="myAccount" class="tabcontent">
+                <h2>我的账户</h2>
+                <h5 class="text message">地址:&nbsp;<span id="address"></span></h3>
+                <h5 class="text message">余额:&nbsp;<span id="balance"></span></h3>
+            </div>
+            <!-- Form fields for minting new tokens -->
+            <div id="bid" class="tabcontent">
+                <h2>报价</h2>
+                <div class="input-group">
+                    <input type="number" id="bidAmount" placeholder="请输入报价..." />
+                </div>
+                <div class="input-group">
+                    <input type="text" id="bidSecret" placeholder="请输入加密密码..." />
+                    <input type="text" hidden id="blindedBid" />
+                </div>
+                <div class="input-group">
+                    <input type="radio" name="bidIsSale" value="false" checked="checked">买家</input>
+                    <input type="radio" name="bidIsSale" value="true">卖家</input>
+                </div>
+                <div class="input-group">
+                    <button class="btn" id="button-encrypt">加密报价</button>
+                    <button class="btn" id="button-bid">报价</button>
+                </div>
+            </div>
+            <div id="reveal" class="tabcontent">
+                <h2>揭晓</h2>
+                <div class="input-group">
+                    <input type="number" id="revealAmount" placeholder="请输入报价..." />
+                </div>
+                <div class="input-group">
+                    <input type="text" id="revealSecret" placeholder="请输入加密密码..." />
+                </div>
+                <div class="input-group">
+                    <input type="radio" name="revealIsSale" value="false" checked="checked">买家</input>
+                    <input type="radio" name="revealIsSale" value="true">卖家</input>
+                </div>
+                <div class="input-group">
+                    <button class="btn" id="button-reveal">揭晓</button>
+                </div>
+            </div>
+            <div id="transactionPrice" class="tabcontent">
+                <h2>成交价</h2>
+                <h5 class="text message">买家:&nbsp;<span id="purchaseTransactionPrice"></span></h3>
+                <h5 class="text message">卖家:&nbsp;<span id="saleTransactionPrice"></span></h3>
+            </div>
+        </div>
+    </body>
+</html>
